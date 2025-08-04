@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands on Android</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            text-decoration: none;
+            background-color: hsl(240, 23%, 52%);
+            color: wheat;
+            width: 120px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        main a:active {
+            background-color: hsl(240, 54%, 20%) !important;
+        }
+
+        main div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 1px solid;
+            border-radius: 2px;
+            padding: 2px 4px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        div span {
+            margin-right: 5px;
+            color: rgb(150, 150, 150);
+        }
+
+        div input {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+        }
+
+        main hr {
+            width: 100%;
+        }
+
+        main pre {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <a href="form.html">Test Form</a>
+        <div>
+            <span><label for="message">#></label></span>
+            <input type="text" id="message" placeholder="Enter Message" onkeydown="processKey(event)">
+        </div>
+        <hr>
+        <pre id="nav_response"></pre>
+    </main>
+
+    <script>
+        function processKey(event) {
+            switch (event.key) {
+                case "Enter":
+                    try { AndroidBridge.switch_to_nav(document.getElementById("message").value); }
+                    catch (error) { document.getElementById("nav_response").innerText = `Operation failed!`; }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        function show_response(str) {
+            document.getElementById("nav_response").innerText = str;
+        }
+    </script>
+</body>
+
+</html>

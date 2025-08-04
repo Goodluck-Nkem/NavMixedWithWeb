@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock Test</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/digital_clock.css">
+    <link rel="icon" href="img/Baby_reduced.jpg">
+</head>
+
+<body>
+    <header>
+        <nav class="nav_bar">
+            <a href="index.html">Home</a>
+            <a href="tests.html">Tests</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+        </nav>
+        <h1> Shows Date and Time, we can choose the hour format </h1>
+    </header>
+
+    <main>
+        <button id="hour_format_button" onclick="clock_change_format()">
+            Toggle Hour Format
+        </button>
+        <div id="digital_clock">
+            <div id="date_label">Date</div>
+            <div id="time_label">Time</div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src='js/digital_clock.js'></script>
+</body>
+
+</html>

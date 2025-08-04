@@ -1,0 +1,83 @@
+/* Externally loaded fonts shall be prefixed with 'x' */
+@font-face {
+    font-family: "xDC_Time_Font";
+    src: url("../font/OCR-b.ttf");
+}
+
+@font-face {
+    font-family: "xDC_Date_Font";
+    src: url("../font/OCRAEXT.TTF");
+}
+
+/* styling our clock */
+body {
+    background-image: url("../img/Cherry_Tree_reduced.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    height: 40vh;
+}
+
+header>h1 {
+    color: rgb(233, 138, 14);
+    background-color: rgb(25, 25, 26);
+    border-radius: 5px;
+    padding: 0px 3px;
+}
+
+/* when flex-dir is column, justify is vertical and vice versa */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 60vh;
+}
+
+main *{
+    margin: 1px 0px;
+}
+
+#digital_clock {
+    background-color: rgb(80, 80, 60);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#date_label {
+    font-family: xDC_Date_Font;
+    font-size: 5vw;
+}
+
+#time_label {
+    font-family: xDC_Time_Font;
+    font-size: 12vw;
+}
+
+#hour_format_button {
+    background-color: hsl(110, 29%, 49%);
+    border-radius: 3px;
+    font-family: "Courier";
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+#hour_format_button:active {
+    background-color: hsl(110, 29%, 39%) !important;
+}
+
+#hour_format_button:hover {
+    background-color: hsl(110, 29%, 59%);
+}
+
+@media(hover:none) {
+    #hour_format_button:hover {
+        background-color: hsl(110, 29%, 49%);
+    }
+}

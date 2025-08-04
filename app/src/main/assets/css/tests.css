@@ -1,0 +1,11 @@
+.tests_li_container{
+    display: flex;
+    margin: 5px;
+}
+
+.tests_li_container a{
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    text-align: left;
+}

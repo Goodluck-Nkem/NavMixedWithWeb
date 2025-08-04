@@ -1,0 +1,41 @@
+/* Externally loaded fonts shall be prefixed with 'x' */
+@font-face {
+    font-family: "xDigitalFont";
+    src: url("../font/Digital-7_(mono).ttf");
+}
+
+@font-face {
+    font-family: "xDroidSansMono";
+    src: url("../font/DroidSans_Mono.ttf");
+}
+
+@font-face {
+    font-family: "xBedstead";
+    src: url("../font/Bedstead.otf");
+}
+
+#index_header {
+    color: hsl(256, 63%, 20%);
+    background-color: hsl(204, 22%, 72%);
+}
+
+footer {
+    font-family: xBedstead;
+    font-size: 16px;
+    background-color: hsl(125, 21%, 58%);
+}
+
+#changed_text {
+    font-family: xDroidSansMono;
+    font-size: 16px;
+    font-style: normal;
+    color: brown;
+    background-color: antiquewhite;
+}
+
+#index_main img {
+    padding: 10px;
+    background-color: rgb(14, 0, 0);
+    border-radius: 10px;
+    margin: 10px 1px;
+}

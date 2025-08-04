@@ -1,0 +1,7 @@
+main p, img{
+    margin: 10px;
+}
+
+#about_image{
+    max-width: 300px;
+}

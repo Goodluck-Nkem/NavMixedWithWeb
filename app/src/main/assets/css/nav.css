@@ -1,0 +1,37 @@
+/* Account for padding/margin when sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* when flex-dir is row, justify is horizontal and vice versa */
+.nav_bar {
+    background-color: hsl(0, 3%, 16%);
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 40px;
+}
+
+.nav_bar a {
+    background-color: rgb(92, 132, 112);
+    color: rgb(233, 237, 240);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    min-width: 75px;
+    height: 70%;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.nav_bar a:hover {
+    background-color: hsl(150, 18%, 54%);
+}
+
+.nav_bar a:active {
+    background-color: hsl(150, 18%, 34%);
+}
