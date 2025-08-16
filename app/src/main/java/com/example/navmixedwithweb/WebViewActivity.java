@@ -40,7 +40,9 @@ public class WebViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        WebViewActivity.web_count++;
 
+        /* get intent from launcher */
         String[] page_array = {"index.html", "about.html", "digital_clock.html", "switch_to_nav.html"};
         int page_index = getIntent().getIntExtra("page_index", 0);
         Toast.makeText(this, "Page[" + page_index + "]: " + page_array[page_index], Toast.LENGTH_SHORT).show();
@@ -74,9 +76,9 @@ public class WebViewActivity extends AppCompatActivity {
                     webView.goBack();
                 else {
                     /* non-root activity return intent (return web count) */
-                    final int count = WebViewActivity.web_count++;
-                    setResult(RESULT_OK, new Intent().putExtra("web_count", count));
-                    Toast.makeText(WebViewActivity.this, "Web_View sets result -> count = " + count, Toast.LENGTH_SHORT).show();
+                    WebViewActivity.web_count--;
+                    setResult(RESULT_OK, new Intent().putExtra("web_count", WebViewActivity.web_count));
+                    Toast.makeText(WebViewActivity.this, "Web_View sets result -> count = " + WebViewActivity.web_count, Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }

@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        MainActivity.nav_count++;
 
+        /* get intent from launcher */
         String message = getIntent().getStringExtra("message");
         if (message != null)
             Toast.makeText(this, "Message: " + message, Toast.LENGTH_LONG).show();
@@ -83,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void handleOnBackPressed() {
                 /* non-root activity return intent (return nav count) */
-                final int count = MainActivity.nav_count++;
-                Toast.makeText(MainActivity.this, "Nav_View sets result -> count = " + count, Toast.LENGTH_SHORT).show();
-                setResult(RESULT_OK, new Intent().putExtra("nav_count", count));
+                MainActivity.nav_count--;
+                Toast.makeText(MainActivity.this, "Nav_View sets result -> count = " + MainActivity.nav_count, Toast.LENGTH_SHORT).show();
+                setResult(RESULT_OK, new Intent().putExtra("nav_count", MainActivity.nav_count));
                 finish();
             }
         });
